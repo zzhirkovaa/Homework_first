@@ -81,12 +81,6 @@ public class CannonController : MonoBehaviour
     private void Fire()
     {
         if(_projectilePrefab == null || _muzzle == null) return;
-
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.RegisterShot();
-        }
-
         GameObject projectile = Instantiate(_projectilePrefab, _muzzle.position, _muzzle.rotation);
         QuadraticDrag qd = projectile.GetComponent<QuadraticDrag>();
 
